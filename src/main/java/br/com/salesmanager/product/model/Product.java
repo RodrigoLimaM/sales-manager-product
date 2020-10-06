@@ -14,6 +14,7 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Document(collection = "products")
 @Getter
@@ -42,4 +43,8 @@ public class Product {
     @LastModifiedDate
     @Field(name = "update_date")
     private LocalDateTime updateDate;
+
+    public Optional<BigDecimal> optionalUnitaryValue() {
+        return Optional.of(unitaryValue);
+    }
 }
