@@ -55,7 +55,7 @@ Microsservice for product management of the sales-manager architecture
     
     `productId={String}`
     
-    `requestedQuantity ={Integer}`
+    `requestedQuantity={Integer}`
  * **Success Response:**
  
     * **Code:** 200 <br />
@@ -83,10 +83,38 @@ Microsservice for product management of the sales-manager architecture
     2200
     ```
   
+* **URL**\
+/product/subtractQuantity/{productId}
+
+* **Method:**\
+ `PUT`
+ 
+ *  **URL Params**
+ 
+    **Required:**
+     
+    `productId={String}`
+    
+    `quantity={Integer}`
+ * **Success Response:**
+ 
+    * **Code:** 200 <br />
+        **Content:**
+    ```json
+    {
+      "_id": "5f7cdfb273e86e129ea6efa9",
+      "name": "Televisão 4K",
+      "unitaryValue": 2200,
+      "quantity": 9,
+      "creationDate": "2020-10-06T18:20:50.081",
+      "updateDate": "2020-10-06T18:49:11.1654678"
+    }
+    ```
+  
  * **Architecture:**
  
     ![Alt text](https://user-images.githubusercontent.com/51386403/95261158-45436900-0800-11eb-9b10-ec7bfe7cd371.png "Architecture")
-    * 1 - Will receive an order and check if stock is avaliable
+    * 1 - Will receive an order and check if stock is avaliable;
     * 2 - If has stock, will create the order and persist on MongoDB with status ***PENDING***;
     * 3 - The persisted order will be produced on ***NEW_ORDER*** Kafka topic;
     * 4 - Will listen to the topic and check if the customer has available balance;
