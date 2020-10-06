@@ -92,7 +92,7 @@ Microsservice for product management of the sales-manager architecture
     * 4 - Will listen to the topic and check if the customer has available balance;
     * 5 - Will produce a message on ***ORDER_STATUS_CHANGE*** Kafka topic updating the order status (***FINISHED*** or ***CANCELLED***);
     * 6 - Will listen to the topic and update the order status on MongoDB;
-    * 7 - Will update the product stock (if product status is ***FINISHED***.
+    * 7 - Will update the product stock (if product status is ***FINISHED***).
     
     
     
