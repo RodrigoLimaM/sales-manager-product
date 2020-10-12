@@ -48,12 +48,13 @@ Microsservice for product management of the sales-manager architecture
 
 * **Method:**\
  `GET`
- 
+
+ *  **Path Variables**
+
+    `productId={String}`
  *  **URL Params**
  
     **Required:**
-    
-    `productId={String}`
     
     `requestedQuantity={Integer}`
  * **Success Response:**
@@ -70,9 +71,7 @@ Microsservice for product management of the sales-manager architecture
 * **Method:**\
  `GET`
  
- *  **URL Params**
- 
-    **Required:**
+ *  **Path Variables**
     
     `productId={String}`
  * **Success Response:**
@@ -88,13 +87,14 @@ Microsservice for product management of the sales-manager architecture
 
 * **Method:**\
  `PUT`
- 
+
+ *  **Path Variables**
+
+    `productId={String}`
  *  **URL Params**
  
     **Required:**
      
-    `productId={String}`
-    
     `quantity={Integer}`
  * **Success Response:**
  
