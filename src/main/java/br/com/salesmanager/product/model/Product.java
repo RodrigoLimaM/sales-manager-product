@@ -45,6 +45,6 @@ public class Product {
     private LocalDateTime updateDate;
 
     public Optional<BigDecimal> optionalUnitaryValue() {
-        return Optional.of(unitaryValue);
+        return Optional.ofNullable(unitaryValue);
     }
 }
