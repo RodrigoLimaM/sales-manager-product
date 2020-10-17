@@ -81,6 +81,29 @@ Microsservice for product management of the sales-manager architecture
     ```json
     2200
     ```
+
+* **URL**\
+/product
+
+* **Method:**\
+ `GET`
+
+ * **Success Response:**
+
+    * **Code:** 200 <br />
+        **Content:**
+    ```json
+    [
+      {
+        "_id": "5f7cdfb273e86e129ea6efa9",
+        "name": "Televisão 4K",
+        "unitaryValue": 2200,
+        "quantity": 10,
+        "creationDate": "2020-10-06T18:20:50.0812977",
+        "updateDate": "2020-10-06T18:20:50.0812977"
+      }
+    ]
+    ```
   
 * **URL**\
 /product/subtractQuantity/{productId}

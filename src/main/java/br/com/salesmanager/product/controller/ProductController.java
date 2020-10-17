@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Validated
 @RestController
@@ -50,5 +51,12 @@ public class ProductController {
     public ResponseEntity<Boolean> hasAvailableStock(@RequestParam Integer requestedQuantity,
                                                      @PathVariable String productId) {
         return ResponseEntity.ok(productService.checkForAvailability(requestedQuantity, productId));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Product>> getProducts() {
+        return productService.findAll()
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.noContent().build());
     }
 }

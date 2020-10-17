@@ -4,10 +4,12 @@ import br.com.salesmanager.product.model.Product;
 import br.com.salesmanager.product.model.dto.ProductDTO;
 import br.com.salesmanager.product.model.mapper.ProductMapper;
 import br.com.salesmanager.product.repository.ProductRepository;
+import com.mongodb.client.MongoIterable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,6 +27,11 @@ public class ProductService {
 
     public Optional<Product> findProductById(String productId){
         return productRepository.findById(productId);
+    }
+
+    public Optional<List<Product>> findAll() {
+        return Optional.of(productRepository.findAll())
+                .map(list -> list.isEmpty() ? null : list);
     }
 
     public Boolean checkForAvailability(Integer requestedQuantity, String productId) {
@@ -55,4 +62,5 @@ public class ProductService {
     private Product save (Product product) {
         return productRepository.save(product);
     }
+
 }
