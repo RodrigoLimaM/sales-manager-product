@@ -104,6 +104,30 @@ Microsservice for product management of the sales-manager architecture
       }
     ]
     ```
+
+* **URL**\
+/product/{productId}
+
+* **Method:**\
+ `GET`
+
+  *  **Path Variables**
+
+     `productId={String}`
+ * **Success Response:**
+
+    * **Code:** 200 <br />
+        **Content:**
+    ```json
+    {
+      "_id": "5f8ba6012511d661db944b84",
+      "name": "Celular Moto G",
+      "unitaryValue": 540,
+      "quantity": 50,
+      "creationDate": "2020-10-17T23:18:41.695",
+      "updateDate": "2020-10-17T23:18:41.695"
+    }
+    ```
   
 * **URL**\
 /product/subtractQuantity/{productId}
