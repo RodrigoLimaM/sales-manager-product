@@ -10,6 +10,7 @@ public class ProductMapper {
     public Product mapProductDTOToProduct(ProductDTO productDTO) {
         return Product.builder()
                 .name(productDTO.getName())
+                .description(productDTO.getDescription())
                 .quantity(productDTO.getQuantity())
                 .unitaryValue(productDTO.getUnitaryValue())
                 .build();

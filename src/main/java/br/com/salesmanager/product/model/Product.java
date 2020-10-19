@@ -30,6 +30,9 @@ public class Product {
     @Field(name = "product_name")
     private String name;
 
+    @Field(name = "product_description")
+    private String description;
+
     @Field(name = "product_unitary_value")
     private BigDecimal unitaryValue;
 

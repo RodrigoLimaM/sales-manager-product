@@ -20,6 +20,10 @@ public class ProductDTO {
     private String name;
 
     @NotNull
+    @NotBlank
+    private String description;
+
+    @NotNull
     private BigDecimal unitaryValue;
 
     @NotNull
